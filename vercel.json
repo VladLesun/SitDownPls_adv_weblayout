@@ -1,10 +1,10 @@
 {
   "builds": [
     {
-      "src": "gulpfile.js",
-      "use": "@vercel/static-build",
-      "config": {}
+      "src": "package.json",
+      "use": "@vercel/static-build"
     }
   ],
   "outputDirectory": "dist"
 }
+
