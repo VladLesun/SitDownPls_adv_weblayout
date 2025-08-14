@@ -1,0 +1,68 @@
+:root {
+	--OS-Regular: 'OpenSans-Regular', sans-serif;
+	--OS-Semibold: 'OpenSans-Semibold', sans-serif;
+	--OS-Bold: 'OpenSans-Bold', sans-serif;
+	--PlayfairDisplay-Black: 'PlayfairDisplay-Black', sans-serif;
+
+	// main colors
+	--first-bc: #fff;
+	--second-bc: #f6f6f6;
+	--main-color: #333;
+	--white-color: #fff;
+	--gray-color: #999;
+	--orange-color: #ff862f;
+	--pink-btn-offset: #a65cf0;
+	--personal-default: #a65cf0;
+	// pink btn hovers
+	--pink-btn-hover: #c998fb;
+	--pink-btn-border: #7033ac;
+	--pink-btn-active: #7033ac;
+	--pink-btn-disabled: #eaeaea;
+
+	//header hovers
+	--header-link-hover: #a65cf0;
+	--header-link-focus: #7033ac;
+	--header-link-focus-bc: #ebd1ff;
+	--header-link-active: #7033ac;
+	--phone-hover: #ffbd59;
+	--phone-focus-bc: #fff5d1;
+	--phone-active: #bb370e;
+	--personal-hover: #c998fb;
+	--personal-focus: #fff;
+	--personal-focus-bc: #c998fb;
+	--personal-active: #7033ac;
+	--breadcrumbs-hover: #c998fb;
+	--breadcrumbs-focus: #ad5bff;
+	--breadcrumbs-active: #7033ac;
+
+	// article colors
+	--article-bc: #f6f6f6;
+	--sale-color: #fff;
+	--border-color: #a65cf0;
+	--article-btn-color: #a65cf0;
+	--article-link-color: #a65cf0;
+	// article hovers
+	--article-btn-hover: #a65cf0;
+	--article-btn-focus: #c998fb;
+	--article-btn-active: #7033ac;
+	--article-link-hover: #a65cf0;
+	--article-link-active: #7033ac;
+
+	// oxford color
+	--oxford-color: #d5b986;
+
+	// contacts colors
+	--contacts-desc: #666;
+	--contacts-pink: #a65cf0;
+	--input-hover: #eaeaea;
+	--input-focus: #a65cf0;
+	--input-focus-bc: #f8efff;
+	--input-success: #b8ec64;
+
+	// footer colors
+	--footer-top: #eaeaea;
+
+	// cooperation text
+	--cooperation-desc: #666;
+	--cooperation-number: #ff862f;
+}

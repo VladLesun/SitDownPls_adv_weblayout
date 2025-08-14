@@ -1,0 +1,35 @@
+@use "vars";
+@use "mixins";
+@use "fonts";
+@use "settings";
+
+// general components
+@use "./components/form";
+@use "./components/checkbox";
+@use "./components/product-card";
+@use "./components/article";
+@use "./components/table";
+
+// main components
+@use "./components/header";
+@use "./components/search";
+@use "./components/personal";
+@use "./components/hero";
+@use "./components/special";
+@use "./components/rating";
+@use "./components/new";
+@use "./components/top-category";
+@use "./components/useful";
+@use "./components/contacts";
+@use "./components/footer";
+
+// catalog components
+@use "./components/filter";
+@use "./components/catalog";
+@use "./components/pagination";
+
+// card components
+@use "./components/card";
+
+// cooperation components
+@use "./components/cooperation";

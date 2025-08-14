@@ -1,0 +1,88 @@
+@use "mixins";
+
+.hero {
+  padding: 80px 0;
+  background: #f1f3fc center/cover no-repeat;
+  background-image: image-set(
+    url("../img/hero-1920.webp") type("image/webp"),
+    url("../img/hero-1920.png") type("image/png")
+  );
+  &__title {
+    max-width: 496px;
+    font-family: var(--OS-Bold);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 138%;
+    color: var(--gray-color);
+    margin-bottom: 47px;
+  }
+  &__button {
+    min-width: 187px;
+    padding: 20px 15px;
+    &_mobile {
+      display: none;
+    }
+  }
+}
+
+@include mixins.laptop {
+  .hero {
+    background-image: image-set(
+      url("../img/hero-1024.webp") type("image/webp"),
+      url("../img/hero-1024.png") type("image/png")
+    );
+    &__title {
+      margin-bottom: 49px;
+    }
+  }
+}
+
+@include mixins.tablet {
+  .hero {
+    background-image: image-set(
+      url("../img/hero-768.webp") type("image/webp"),
+      url("../img/hero-768.png") type("image/png")
+    );
+  }
+}
+
+@include mixins.small-tablet {
+  .hero {
+    &__title {
+      max-width: 400px;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include mixins.mobile {
+  .hero {
+    padding: 15px 0 0;
+    background: transparent;
+    &__container {
+      padding: 15px 30px 125px;
+      margin-bottom: 32px;
+      background: #f1f3fc center/cover no-repeat;
+      background-image: image-set(
+        url("../img/hero-320.webp") type("image/webp"),
+        url("../img/hero-320.png") type("image/png")
+      );
+    }
+    &__title {
+      max-width: 235px;
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+    &__button {
+      min-width: 296px;
+      margin: 0 auto;
+      &_mobile {
+        display: block;
+      }
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use 'mixins';
+
+.contacts {
+  padding: 35px 0 73px;
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &::after {
+      position: absolute;
+      bottom: 21px;
+      right: 36px;
+      width: 624px;
+      height: 383px;
+      content: "";
+      background: right/contain no-repeat;
+      background-image: image-set(
+        url("../img/contacts-1920.webp") type("image/webp"),
+        url("../img/contacts-1920.png") type("image/png")
+      );
+    }
+  }
+  &__title {
+    margin-bottom: 9px;
+  }
+  &__description {
+    max-width: 624px;
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--contacts-desc);
+    margin-bottom: 16px;
+  }
+  &__form {
+    max-width: 624px;
+  }
+}
+
+@include mixins.laptop-L {
+  .contacts {
+    &__container {
+      &::after {
+        right: 10px;
+        width: 500px;
+      }
+    }
+  }
+}
+
+@include mixins.laptop {
+  .contacts {
+    &__container {
+      &::after {
+        bottom: 41px;
+        right: 36px;
+        width: 514px;
+        background-image: image-set(
+          url("../img/contacts-1024.webp") type("image/webp"),
+          url("../img/contacts-1024.png") type("image/png")
+        );
+      }
+    }
+    &__description {
+      max-width: 380px;
+      line-height: 136%;
+      margin-bottom: 15px;
+    }
+    &__form {
+      max-width: 405px;
+    }
+  }
+}
+
+@include mixins.tablet {
+  .contacts {
+    &__container {
+      &::after {
+        bottom: 10px;
+        right: 72px;
+        width: 187px;
+        height: 444px;
+        background-image: image-set(
+          url("../img/contacts-768.webp") type("image/webp"),
+          url("../img/contacts-768.png") type("image/png")
+        );
+      }
+    }
+    &__title,
+    &__description,
+    &__form {
+      max-width: 405px;
+    }
+  }
+}
+
+@include mixins.small-tablet {
+  .contacts {
+    padding: 35px 0 71px;
+    &__container {
+      &::after {
+        display: none;
+      }
+    }
+    &__title,
+    &__description,
+    &__form {
+      max-width: 640px;
+    }
+  }
+}

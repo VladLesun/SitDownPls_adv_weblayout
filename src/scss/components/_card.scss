@@ -1,0 +1,340 @@
+@use "mixins";
+
+.card {
+  padding: 0 0 70px;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 108px 32px;
+  }
+  &__image {
+    grid-column: 1 / 2;
+    align-self: end;
+  }
+  &__price {
+    grid-column: 2 / 3;
+    padding-top: 11px;
+  }
+  &__rate {
+    display: block;
+    margin-bottom: 3px;
+    &-svg {
+      width: 16px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+    &-mark {
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--orange-color);
+    }
+  }
+  &__title {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--main-color);
+    margin-bottom: 5px;
+  }
+  &__description {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--gray-color);
+    margin-bottom: 21px;
+  }
+  &__value {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+    color: var(--main-color);
+    margin-bottom: 21px;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    width: 230px;
+    &_buy {
+      padding: 16px 0;
+      font-family: var(--OS-Semibold);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      margin-bottom: 12px;
+    }
+    &_add {
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--pink-btn-offset);
+    }
+  }
+  &__mechanism {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+  &__subtitle {
+    font-family: var(--OS-Semibold);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--main-color);
+    margin-bottom: 8px;
+  }
+  &__subdescription {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    color: var(--main-color);
+    margin-bottom: 105px;
+    &-part {
+      display: block;
+      margin-bottom: 7px;
+    }
+  }
+  &__scheme {
+    width: 247px;
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
+  }
+  &__features {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    width: 100%;
+    margin-top: -1px;
+  }
+  &__feature {
+    display: none;
+  }
+  &__table {
+    max-width: 548px;
+  }
+  &__like {
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+    margin-top: -25px;
+    &-title {
+      font-size: 24px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px;
+  }
+  &__product-card {
+    grid-template-rows: 195px;
+  }
+  &__content {
+    &-product-card {
+      min-height: 226px;
+      padding: 13px 30px 30px;
+    }
+  }
+}
+
+@include mixins.laptop {
+  .card {
+    &__container {
+      grid-template-columns: 514px 1fr;
+      grid-gap: 82px 32px;
+    }
+    &__image {
+      align-self: center;
+    }
+    &__price {
+      padding-top: 0;
+    }
+    &__rate {
+      margin-bottom: 0;
+    }
+    &__subdescription {
+      margin-bottom: 80px;
+    }
+    &__scheme {
+      width: 243px;
+      &:not(:last-child) {
+        margin-right: 23px;
+      }
+    }
+    &__features {
+      margin-top: -3px;
+    }
+    &__like {
+      margin-top: -10px;
+    }
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__item {
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mixins.tablet {
+  .card {
+    &__container {
+      grid-template-columns: 1fr;
+      grid-gap: 32px;
+      margin-top: -3px;
+    }
+    &__price {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      padding: 47px 0;
+    }
+    &__rate {
+      margin-bottom: 2px;
+    }
+    &__button {
+      &_buy {
+        padding: 17px 0;
+      }
+    }
+    &__mechanism {
+      grid-row: 3 / 4;
+    }
+    &__subdescription {
+      max-width: 514px;
+      margin-bottom: 30px;
+    }
+    &__scheme {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+    &__features {
+      grid-row: 4 / 5;
+      grid-column: 1 / 2;
+      margin-top: -4px;
+    }
+    &__table {
+      max-width: 624px;
+    }
+    &__like {
+      grid-row: 5 / 6;
+      grid-column: 1 / 2;
+      margin-top: 4px;
+    }
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__item {
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mixins.small-tablet {
+  .card {
+    &__scheme {
+      max-width: 140px;
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+    }
+    &__like {
+      margin-top: 38px;
+    }
+  }
+}
+
+@include mixins.mobile {
+  .card {
+    &__container {
+      margin-top: -8px;
+    }
+    &__price {
+      padding: 0;
+      margin-top: -19px;
+    }
+    &__title {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    &__description {
+      max-width: 240px;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    &__value {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    &__button {
+      width: 100%;
+    }
+    &__mechanism {
+      margin-top: -4px;
+    }
+    &__subtitle {
+      margin-bottom: 8px;
+    }
+    &__subdescription {
+      max-width: 290px;
+      margin-bottom: 30px;
+    }
+    &__scheme {
+      &:not(:last-child) {
+        margin-right: 11px;
+      }
+    }
+    &__features {
+      max-width: 220px;
+      margin-top: -6px;
+    }
+    &__feature {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 180%;
+      color: var(--gray-color);
+      &-description {
+        max-width: 220px;
+        font-size: 14px;
+        color: var(--main-color);
+      }
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+    &__like {
+      margin-top: 43px;
+    }
+    &__list {
+      grid-gap: 16px;
+    }
+    &__item {
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+    &__product-card {
+      grid-template-rows: 99px;
+    }
+    &__content {
+      &-product-card {
+        min-height: 180px;
+        padding: 8px 16px 16px;
+      }
+    }
+  }
+}

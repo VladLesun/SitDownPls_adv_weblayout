@@ -1,0 +1,56 @@
+@use 'mixins';
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: -64px;
+  transform: translateX(-50%);
+  &__btn {
+    width: 32px;
+    padding: 8px 0;
+    border-radius: 10px;
+    border-color: var(--border-color);
+    font-family: var(--OS-Semibold);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--article-btn-color);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+    @include mixins.hover {
+      border-color: transparent;
+      background-color: var(--article-btn-hover);
+      color: var(--white-color);
+    }
+    @include mixins.focus {
+      background-color: var(--article-btn-focus);
+      color: var(--white-color);
+    }
+    &_active {
+      border-color: transparent;
+      background-color: var(--article-btn-active);
+      color: var(--white-color);
+      @include mixins.hover {
+        border-color: transparent;
+        background-color: var(--article-btn-active);
+        color: var(--white-color);
+      }
+      @include mixins.focus {
+        border-color: transparent;
+        background-color: var(--article-btn-active);
+        color: var(--white-color);
+      }
+    }
+  }
+}
+
+@include mixins.tablet {
+  .pagination {
+    max-width: 128px;
+  }
+}

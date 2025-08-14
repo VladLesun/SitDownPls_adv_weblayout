@@ -1,0 +1,70 @@
+@use 'mixins';
+
+.useful {
+	padding: 35px 0;
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 32px;
+	}
+	&__item {
+		min-height: 676px;
+		&:nth-child(3) {
+			display: none;
+		}
+		&:nth-child(n + 4) {
+			display: none;
+		}
+	}
+}
+
+@include mixins.laptop {
+	.useful {
+		&__list {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		&__item {
+			min-height: 456px;
+			&:nth-child(3) {
+				display: block;
+			}
+		}
+	}
+}
+
+@include mixins.tablet {
+	.useful {
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&__item {
+			min-height: 456px;
+			&:nth-child(n + 3) {
+				display: none;
+			}
+		}
+	}
+}
+
+@include mixins.small-tablet {
+	.useful {
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&__item {
+			min-height: 456px;
+			&:nth-child(n + 3) {
+				display: block;
+			}
+		}
+	}
+}
+
+@include mixins.mobile {
+	.useful {
+		&__list {
+			grid-template-columns: 1fr;
+			grid-gap: 24px;
+		}
+	}
+}

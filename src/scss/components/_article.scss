@@ -1,0 +1,170 @@
+@use "mixins";
+
+.article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--article-bc);
+  &_black {
+    background-color: var(--main-color);
+  }
+  &__image {
+    width: 100%;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 100%;
+    &_black {
+      padding-top: 27px;
+    }
+  }
+  &__title {
+    font-family: var(--PlayfairDisplay-Black);
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--oxford-color);
+    margin-bottom: 1px;
+  }
+  &__description {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--main-color);
+    margin-bottom: auto;
+    &_black {
+      max-width: 199px;
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--gray-color);
+    }
+  }
+  &__button {
+    width: 128px;
+    padding: 18px 15px;
+    margin-top: auto;
+    border-radius: 10px;
+    border-color: var(--border-color);
+    font-family: var(--OS-Semibold);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--article-btn-color);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+    @include mixins.hover {
+      border-color: transparent;
+      background-color: var(--article-btn-hover);
+      color: var(--white-color);
+    }
+    @include mixins.focus {
+      background-color: var(--article-btn-focus);
+      color: var(--white-color);
+    }
+    &:active {
+      border-color: transparent;
+      background-color: var(--article-btn-active);
+      color: var(--white-color);
+    }
+  }
+  &__link {
+    position: relative;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    font-family: var(--OS-Bold);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--article-link-color);
+    margin-top: auto;
+    transition: color 0.3s ease-in-out;
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      content: "";
+      width: 0;
+      height: 2px;
+      background-color: var(--article-link-hover);
+      transition: width 0.3s ease, background-color 0.3s ease-in-out;
+    }
+    &-svg {
+      width: 22px;
+      height: 22px;
+      margin-left: 5px;
+      & > .link-default,
+      & > .link-hover,
+      & > .link-focus,
+      & > .link-active {
+        transition: opacity 0.3s ease-in-out;
+      }
+      & > .link-default {
+        opacity: 1;
+      }
+      & > .link-hover,
+      & > .link-focus,
+      & > .link-active {
+        opacity: 0;
+      }
+      @include mixins.hover {
+        &::after {
+          width: 81px;
+        }
+        .link-default {
+          opacity: 0;
+        }
+        .link-hover {
+          opacity: 1;
+        }
+      }
+      @include mixins.focus {
+        &::after {
+          width: 81px;
+        }
+        .link-default {
+          opacity: 0;
+        }
+        .link-focus {
+          opacity: 1;
+        }
+      }
+      &:active {
+        color: var(--article-link-active);
+        &::after {
+          width: 81px;
+          background-color: var(--article-link-active);
+        }
+        .link-default {
+          opacity: 0;
+        }
+        .link-active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@include mixins.laptop {
+  .article {
+    &__description {
+      font-size: 16px;
+    }
+  }
+}
+
+@include mixins.small-tablet {
+  .article {
+    &__button {
+      width: 130px;
+      margin-top: 20px;
+    }
+  }
+}

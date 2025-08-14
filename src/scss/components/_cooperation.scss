@@ -1,0 +1,148 @@
+@use "mixins";
+
+.cooperation {
+  padding: 0 0 65px;
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 34px;
+  }
+  &__title {
+    margin-bottom: 0;
+  }
+  &__wrap {
+    max-width: 843px;
+    &_flex {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__subtitle {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--main-color);
+    margin-bottom: 16px;
+  }
+  &__description {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: var(--cooperation-desc);
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+    &_flex {
+      display: flex;
+    }
+    &-svg {
+      width: 25px;
+      height: 25px;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+    &-desc {
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 180%;
+      color: var(--cooperation-desc);
+    }
+    &-features {
+      max-width: 587px;
+      line-height: 150%;
+    }
+    &-right {
+      max-width: 813px;
+    }
+  }
+  &__number {
+    font-family: var(--OS-Semibold);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--cooperation-number);
+    &_top {
+      margin-bottom: 16px;
+    }
+    &_left {
+      line-height: 180%;
+      margin-right: 12px;
+    }
+  }
+  &__warranty {
+    position: relative;
+    max-width: 625px;
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: var(--main-color);
+    padding: 22px 0 22px 110px;
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      display: block;
+      width: 77px;
+      height: 116px;
+      content: "";
+      background: left/cover no-repeat;
+      background-image: image-set(
+        url("../img/pencil.webp") type("image/webp"),
+        url("../img/pencil.png") type("image/png")
+      );
+    }
+  }
+}
+
+@include mixins.mobile {
+  .cooperation {
+    padding: 0 0 70px;
+    &__wrap {
+      &_flex {
+        margin-top: -5px;
+      }
+    }
+    &__subtitle {
+      font-size: 16px;
+      margin-bottom: 12px;
+      &_mobile {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+    &__description {
+      font-size: 14px;
+    }
+    &__item {
+      &-desc {
+        font-size: 14px;
+      }
+      &_right {
+        max-width: 263px;
+      }
+    }
+    &__number {
+      &_top {
+        margin-bottom: 12px;
+      }
+    }
+    &__warranty {
+      max-width: 242px;
+      font-size: 16px;
+      padding: 0 0 0 52px;
+      &::before {
+        width: 36px;
+        height: 54px;
+        background-image: image-set(
+          url("../img/pencil-320.webp") type("image/webp"),
+          url("../img/pencil-320.png") type("image/png")
+        );
+      }
+    }
+  }
+}

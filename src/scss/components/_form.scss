@@ -1,0 +1,143 @@
+@use "mixins";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    max-width: 624px;
+    margin-bottom: 30px;
+    &_price {
+      display: flex;
+      align-items: center;
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--main-color);
+      margin-bottom: 0;
+      &:first-child {
+        margin-right: 9px;
+      }
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: 0 18px;
+    height: 54px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: var(--second-bc);
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    &::placeholder {
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 250%;
+      color: var(--gray-color);
+    }
+    @include mixins.hover {
+      background-color: var(--input-hover);
+    }
+    @include mixins.focus {
+      border-color: var(--input-focus);
+      background-color: transparent;
+    }
+    &_price {
+      width: 86px;
+      height: 30px;
+      padding: 0 13px;
+      background-color: transparent;
+      border: 1px solid #999;
+      border-radius: 2px;
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--contacts-desc);
+      margin-left: 12px;
+      @include mixins.hover {
+        background-color: var(--first-bc);
+        border-color: var(--contacts-pink);
+      }
+    }
+  }
+  &__fieldset {
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+    &_price {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__legend {
+    font-family: var(--OS-Semibold);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--contacts-desc);
+    margin-bottom: 8px;
+    &_main {
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      color: var(--main-color);
+      margin-bottom: 20px;
+    }
+  }
+  &__check {
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn {
+    width: 159px;
+    padding: 18px 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@include mixins.laptop {
+  .form {
+    &__fieldset {
+      &_main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+      }
+      &_second:not(:last-child) {
+        width: 100%;
+        max-width: 145px;
+        margin-bottom: 0;
+      }
+    }
+    &__legend {
+      &_main {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mixins.mobile {
+  .form {
+    &__fieldset {
+      &_main {
+        gap: 16px 30px;
+      }
+      &_second:not(:last-child) {
+        max-width: 100px;
+      }
+    }
+    &__btn {
+      padding: 17px 10px;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.just-validate-success-field {
+  border: 1px solid #b8ec64;
+}
+.just-validate-error-field {
+  border: 1px solid #f00;
+}

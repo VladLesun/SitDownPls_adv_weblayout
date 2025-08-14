@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ru" class="page page_catalog">
+  @include('partials/head.html')
+  <body class="page__body page__body_catalog">
+    @include('partials/header.html')
+
+    <main class="main">
+      <section class="catalog">
+        <div class="container catalog__container">
+          <form class="catalog__form form">
+            <fieldset class="form__fieldset form__fieldset_main">
+              <legend class="form__legend form__legend_main">
+                Фильтровать по:
+              </legend>
+              <fieldset class="form__fieldset form__fieldset_second">
+                <legend class="form__legend">Цвет</legend>
+                <label class="form__label-checkbox checkbox checkbox_catalog">
+                  <input
+                    class="checkbox__input"
+                    type="checkbox"
+                    name="brown"
+                    value="Коричневый"
+                  />
+                  Коричневый
+                </label>
+                <label class="form__label-checkbox checkbox checkbox_catalog">
+                  <input
+                    class="checkbox__input"
+                    type="checkbox"
+                    name="black"
+                    value="Черный"
+                  />
+                  Черный
+                </label>
+                <label class="form__label-checkbox checkbox checkbox_catalog">
+                  <input
+                    class="checkbox__input"
+                    type="checkbox"
+                    name="blue"
+                    value="Синий"
+                  />
+                  Синий
+                </label>
+                <label class="form__label-checkbox checkbox checkbox_catalog">
+                  <input
+                    class="checkbox__input"
+                    type="checkbox"
+                    name="white"
+                    value="Белый"
+                  />
+                  Белый
+                </label>
+              </fieldset>
+              <fieldset class="form__fieldset form__fieldset_second">
+                <legend class="form__legend">Категория</legend>
+                <label class="form__label-checkbox checkbox checkbox_catalog">
+                  <input
+                    class="checkbox__input"
+                    type="checkbox"
+                    name="sofas"
+                    value="Диваны"
+                  />
+                  Диваны
+                </label>
+                <label class="form__label-checkbox checkbox checkbox_catalog">
+                  <input
+                    class="checkbox__input"
+                    type="checkbox"
+                    name="chairs"
+                    value="Кресла"
+                  />
+                  Кресла
+                </label>
+              </fieldset>
+              <fieldset class="form__fieldset form__fieldset_second">
+                <legend class="form__legend">Цена</legend>
+                <fieldset class="form__fieldset form__fieldset_price">
+                  <label for="from" class="form__label form__label_price">
+                    от
+                    <input
+                      class="form__input form__input_price"
+                      type="number"
+                      id="from"
+                      name="from"
+                      placeholder="2000"
+                    />
+                  </label>
+                  <label for="before" class="form__label form__label_price">
+                    до
+                    <input
+                      class="form__input form__input_price"
+                      type="number"
+                      id="before"
+                      name="before"
+                      placeholder="150 000"
+                    />
+                  </label>
+                </fieldset>
+              </fieldset>
+            </fieldset>
+          </form>
+
+          <article class="catalog__article article article_black">
+            <picture>
+              <source
+                data-srcset="img/oxford-catalog-1920.webp"
+                srcset="#"
+                type="image/webp"
+              />
+              <img
+                data-src="img/oxford-catalog-1920.png"
+                src="#"
+                class="article__image lazyload"
+                alt="Изображение"
+              />
+            </picture>
+            <div class="article__wrap article__wrap_black">
+              <h2 class="article__title article__title_black">Оксфорд 1950</h2>
+              <p class="article__description article__description_black">
+                Новая коллекция изысканных кресел
+              </p>
+              <a
+                href="catalog.html"
+                class="article__link"
+                aria-label="перейти по ссылке"
+              >
+                <span class="article__link-text"> В каталог </span>
+                <svg class="article__link-svg">
+                  <use
+                    class="link-default"
+                    xlink:href="img/sprite.svg#link-arrow"
+                  />
+                  <use
+                    class="link-hover"
+                    xlink:href="img/sprite.svg#link-arrow-hover"
+                  />
+                  <use
+                    class="link-focus"
+                    xlink:href="img/sprite.svg#link-arrow-focus"
+                  />
+                  <use
+                    class="link-active"
+                    xlink:href="img/sprite.svg#link-arrow-active"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <h1 class="catalog__title title-offset">Каталог</h1>
+
+          <div class="catalog__box">
+            <ul class="catalog__list">
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">5,0</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-1-320.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-1-320.png"
+                      srcset="#"
+                      type="image/png"
+                    />
+                    <source
+                      data-srcset="img/high-1-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-1-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван кожаный “R-94”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      94 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,9</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-2-320.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-2-320.png"
+                      srcset="#"
+                      type="image/png"
+                    />
+                    <source
+                      data-srcset="img/high-2-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-2-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван апартековый “T-75”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      69 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,8</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-3-320.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-3-320.png"
+                      srcset="#"
+                      type="image/png"
+                    />
+                    <source
+                      data-srcset="img/high-3-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-3-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван тканевый “D-31”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      28 490 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,8</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-4-320.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-4-320.png"
+                      srcset="#"
+                      type="image/png"
+                    />
+                    <source
+                      data-srcset="img/high-4-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-4-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван велюровый “Y-68”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      22 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,8</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-5-320.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-5-320.png"
+                      srcset="#"
+                      type="image/png"
+                    />
+                    <source
+                      data-srcset="img/high-5-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-5-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван из шинила “W-95”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      22 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,8</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-6-320.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <source
+                      media="(max-width: 560px)"
+                      data-srcset="img/high-6-320.png"
+                      srcset="#"
+                      type="image/png"
+                    />
+                    <source
+                      data-srcset="img/high-6-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-6-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван флоковый “G-41”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      17 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,8</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      data-srcset="img/high-7-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-7-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван шиниловый “V-43”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      19 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,7</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      data-srcset="img/high-8-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-8-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван велюровый “S-99”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      19 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+              <li class="catalog__item">
+                <article class="product-card product-card_rating">
+                  <span class="product-card__rate">
+                    <svg class="product-card__rate-svg">
+                      <use xlink:href="img/sprite.svg#star" />
+                    </svg>
+                    <span class="product-card__rate-mark">4,7</span>
+                  </span>
+
+                  <picture
+                    class="product-card__image product-card__image_rating"
+                  >
+                    <source
+                      data-srcset="img/high-9-1920.webp"
+                      srcset="#"
+                      type="image/webp"
+                    />
+                    <img
+                      class="lazyload"
+                      data-src="img/high-9-1920.png"
+                      src="#"
+                      alt="Изображение"
+                    />
+                  </picture>
+
+                  <div
+                    class="product-card__content product-card__content_rating"
+                  >
+                    <h3 class="product-card__title product-card__title_rating">
+                      Диван из кожзама “F-85”
+                    </h3>
+                    <p class="product-card__price product-card__price_main">
+                      26 990 руб
+                    </p>
+
+                    <button
+                      class="product-card__button product-card__button_mobile"
+                      aria-label="перейти к разделу"
+                    >
+                      Купить
+                    </button>
+                  </div>
+                </article>
+              </li>
+            </ul>
+            <div class="catalog__pagination pagination">
+              <button
+                class="pagination__btn pagination__btn_active"
+                aria-label="перейти на страницу"
+              >
+                1
+              </button>
+              <button class="pagination__btn" aria-label="перейти на страницу">
+                2
+              </button>
+              <button class="pagination__btn" aria-label="перейти на страницу">
+                3
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    @include('partials/footer.html')
+  </body>
+</html>

@@ -1,0 +1,447 @@
+@use "mixins";
+
+.header {
+  &__top {
+    &_desktop {
+      display: block;
+      background-color: var(--second-bc);
+      padding: 14px 0;
+    }
+    &_tablet {
+      display: none;
+    }
+    &_small-tablet {
+      display: none;
+    }
+    &_mobile {
+      display: none;
+    }
+  }
+  &__middle {
+    &_desktop {
+      display: block;
+      padding: 32px 0;
+    }
+    &_tablet {
+      display: none;
+    }
+    &_small-tablet {
+      display: none;
+    }
+    &_mobile {
+      display: none;
+    }
+  }
+  &__bottom {
+    &_desktop {
+      display: block;
+      padding-bottom: 32px;
+    }
+    &_tablet {
+      display: none;
+    }
+    &_small-tablet {
+      display: none;
+    }
+    &_mobile {
+      display: none;
+    }
+  }
+  &__container {
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-middle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  &__phone {
+    position: relative;
+    width: 143px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--orange-color);
+    transition: color 0.3s ease-in-out;
+    &-wrap {
+      width: 100%;
+      &::before {
+        position: absolute;
+        top: -3px;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: calc(100% + 6px);
+        transform-origin: left;
+        transform: scale(0, 1);
+        background-color: var(--phone-focus-bc);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+    &-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+    }
+    @include mixins.hover {
+      color: var(--phone-hover);
+    }
+    @media (any-hover: hover) {
+      &:focus &-wrap::before {
+        transform: scale(1, 1);
+      }
+    }
+    &:active {
+      color: var(--phone-active);
+    }
+    &-svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+    }
+    &-tel {
+      width: 121px;
+      font-size: 14px;
+      line-height: 1;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    &_additional {
+      max-width: 710px;
+    }
+    &_main {
+      max-width: 952px;
+    }
+  }
+  &__item {
+    &_additional:not(:last-child) {
+      margin-right: 64px;
+    }
+    &_main:not(:last-child) {
+      margin-right: 92px;
+    }
+  }
+  &__link {
+    position: relative;
+    &_additional {
+      font-size: 14px;
+      line-height: 1;
+      color: var(--gray-color);
+    }
+    &-wrap {
+      &::before {
+        position: absolute;
+        top: -2px;
+        left: -10px;
+        content: "";
+        width: calc(100% + 20px);
+        height: calc(100% + 4px);
+        transform-origin: left;
+        transform: scale(0, 1);
+        background-color: var(--header-link-focus-bc);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+    &-text {
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s ease-in-out;
+    }
+    &_main {
+      color: var(--main-color);
+    }
+    @include mixins.hover {
+      color: var(--header-link-hover);
+    }
+    @media (any-hover: hover) {
+      &_additional:focus {
+        color: var(--header-link-focus);
+      }
+      &:focus &-wrap::before {
+        transform: scale(1, 1);
+      }
+    }
+    &:active {
+      color: var(--header-link-active);
+    }
+  }
+  &__logo {
+    width: 187px;
+    height: 27px;
+    flex-shrink: 0;
+  }
+  &__breadcrumbs {
+    align-items: center;
+    margin-top: 20px;
+    &-link {
+      font-family: var(--OS-Regular);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      color: var(--gray-color);
+      transition: color 0.3s ease-in-out;
+      @include mixins.hover {
+        color: var(--breadcrumbs-hover);
+      }
+      @include mixins.focus {
+        color: var(--breadcrumbs-focus);
+      }
+      &_active {
+        color: var(--breadcrumbs-active);
+      }
+    }
+    &-slash {
+      color: var(--gray-color);
+      margin: 0 4px;
+    }
+  }
+}
+
+@include mixins.laptop-L {
+  .header {
+    &__item {
+      &_main:not(:last-child) {
+        margin-right: 71px;
+      }
+    }
+  }
+}
+
+@include mixins.laptop {
+  .header {
+    &__top {
+      &_desktop {
+        display: none;
+      }
+      &_tablet {
+        display: block;
+        padding: 18px 0;
+      }
+    }
+    &__middle {
+      &_desktop {
+        display: none;
+      }
+      &_tablet {
+        display: block;
+        padding: 11px 0;
+        background-color: var(--second-bc);
+      }
+    }
+    &__bottom {
+      &_desktop {
+        display: none;
+      }
+      &_tablet {
+        display: block;
+        padding: 32px 0;
+      }
+    }
+    &__container {
+      &-bottom {
+        display: grid;
+        grid-template-columns: 187px 1fr;
+        grid-gap: 32px 0;
+      }
+    }
+    &__item {
+      &_main:not(:last-child) {
+        margin-right: 42px;
+      }
+    }
+    &__search {
+      grid-column: 1 / 3;
+    }
+    &__breadcrumbs {
+      grid-column: 1 / 3;
+      margin-top: -10px;
+    }
+  }
+}
+
+@include mixins.tablet {
+  .header {
+    &__top {
+      &_tablet {
+        display: none;
+      }
+      &_small-tablet {
+        display: block;
+        padding: 18px 0 19px;
+      }
+    }
+    &__middle {
+      &_tablet {
+        display: none;
+      }
+      &_small-tablet {
+        display: block;
+        padding: 15px 0 17px;
+        background-color: var(--second-bc);
+      }
+    }
+    &__bottom {
+      &_tablet {
+        display: none;
+      }
+      &_small-tablet {
+        display: block;
+        padding: 32px 0;
+      }
+    }
+    &__container {
+      &-bottom {
+        padding: 0 68px;
+        grid-gap: 34px 0;
+      }
+    }
+    &__list {
+      &_additional {
+        width: 100%;
+        justify-content: space-between;
+      }
+      &_main {
+        grid-column: 1 / 3;
+        justify-content: space-between;
+      }
+    }
+    &__item {
+      &_additional:not(:last-child) {
+        margin-right: 20px;
+      }
+      &_main {
+        font-size: 14px;
+      }
+      &_main:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    &__search {
+      grid-column: 1 / 3;
+    }
+    &__breadcrumbs {
+      margin-left: 5px;
+    }
+  }
+}
+
+@include mixins.small-tablet {
+  .header {
+    &__top {
+      &_small-tablet {
+        display: none;
+      }
+      &_mobile {
+        display: block;
+        padding: 18px 0;
+        background-color: var(--second-bc);
+      }
+    }
+    &__middle {
+      &_small-tablet {
+        display: none;
+      }
+      &_mobile {
+        display: block;
+        padding: 16px 0;
+        margin-top: 10px;
+        border-top: 1px solid var(--second-bc);
+        border-bottom: 1px solid var(--second-bc);
+      }
+    }
+    &__bottom {
+      &_small-tablet {
+        display: none;
+      }
+      &_mobile {
+        display: block;
+        padding: 16px 0 32px;
+      }
+    }
+    &__container {
+      &-top {
+        justify-content: center;
+      }
+      &-bottom {
+        padding: 0 45px;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+      }
+    }
+    &__list {
+      &_main {
+        overflow: hidden;
+        overflow-x: auto;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding-bottom: 16px;
+      }
+    }
+    &__item {
+      &_main {
+        flex-shrink: 0;
+      }
+      &_main:not(:last-child) {
+        margin-right: 34px;
+      }
+    }
+    &__search {
+      grid-column: 1 / 3;
+    }
+    &__breadcrumbs {
+      position: absolute;
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+}
+
+@include mixins.mobile {
+  .header {
+    &__top {
+      &_mobile {
+        padding: 12px 0 11px;
+      }
+    }
+    &__middle {
+      &_mobile {
+        padding: 10px 0;
+        margin-top: 16px;
+      }
+    }
+    &__bottom {
+      &_mobile {
+        padding: 18px 0 32px;
+      }
+    }
+    &__container {
+      &-bottom {
+        padding: 0 12px;
+      }
+    }
+    &__list {
+      &_main {
+        padding-bottom: 18px;
+      }
+    }
+    &__item {
+      &_main:not(:last-child) {
+        margin-right: 31px;
+      }
+    }
+  }
+}

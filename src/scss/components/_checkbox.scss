@@ -1,0 +1,92 @@
+@use "mixins";
+
+.checkbox {
+  position: relative;
+  display: block;
+  max-width: max-content;
+  line-height: 20px;
+  padding-left: 28px;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &_main {
+    line-height: 12px;
+    padding-left: 20px;
+  }
+  &_catalog {
+    padding-left: 32px;
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--contacts-desc);
+  }
+  &__input {
+    position: absolute;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    inset: 0;
+    border: 1px solid var(--gray-color);
+    border-radius: 2px;
+    cursor: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      content: "";
+      transform: translate(-50%, -50%);
+      width: inherit;
+      height: inherit;
+      border-radius: 2px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 87%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:checked {
+      border-color: transparent;
+    }
+    &:checked::after {
+      background-color: var(--contacts-pink);
+      background-image: url("../img/complete.svg");
+      opacity: 1;
+    }
+    &_main {
+      width: 14px;
+      height: 14px;
+    }
+
+    @include mixins.hover {
+      border-color: var(--contacts-pink);
+    }
+    @include mixins.focus {
+      outline: none;
+      border-color: var(--contacts-pink);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+  }
+  &__span {
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--main-color);
+  }
+  &__link {
+    text-decoration: underline;
+    color: var(--contacts-pink);
+  }
+}
+
+@include mixins.mobile {
+  .checkbox {
+    &__span {
+      font-size: 12px;
+    }
+  }
+}

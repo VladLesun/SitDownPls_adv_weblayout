@@ -1,0 +1,49 @@
+@use 'mixins';
+
+.rating {
+	padding: 35px 0 70px;
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 32px;
+	}
+	&__item {
+		min-height: 420px;
+	}
+}
+
+@include mixins.laptop {
+	.rating {
+		padding: 33px 0 68px;
+		&__list {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		&__item {
+			&:nth-child(n + 7) {
+				display: none;
+			}
+		}
+	}
+}
+
+@include mixins.tablet {
+	.rating {
+		padding: 33px 0 70px;
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 31px;
+		}
+	}
+}
+
+@include mixins.small-tablet {
+	.rating {
+		padding: 35px 0 69px;
+		&__list {
+			grid-gap: 16px;
+		}
+		&__item {
+			min-height: 278px;
+		}
+	}
+}

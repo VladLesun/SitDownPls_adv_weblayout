@@ -1,0 +1,93 @@
+@use "mixins";
+
+.new {
+  padding: 155px 0 153px;
+  background: #001121 center/cover no-repeat;
+  background-image: image-set(
+    url("../img/oxford-1920.webp") type("image/webp"),
+    url("../img/oxford-1920.png") type("image/png")
+  );
+  &__title {
+    max-width: 508px;
+    font-family: var(--PlayfairDisplay-Black);
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 120%;
+    color: var(--oxford-color);
+  }
+  &__description {
+    max-width: 508px;
+    font-family: var(--OS-Regular);
+    font-weight: 400;
+    font-size: 48px;
+    color: var(--white-color);
+    margin-bottom: 50px;
+  }
+  &__button {
+    min-width: 187px;
+    padding: 20px 15px;
+    &_mobile {
+      display: none;
+    }
+  }
+}
+
+@include mixins.laptop {
+  .new {
+    padding: 155px 0 150px;
+    background-image: image-set(
+      url("../img/oxford-1024.webp") type("image/webp"),
+      url("../img/oxford-1024.png") type("image/png")
+    );
+    &__description {
+      margin-bottom: 53px;
+    }
+  }
+}
+
+@include mixins.tablet {
+  .new {
+    background-image: image-set(
+      url("../img/oxford-768.webp") type("image/webp"),
+      url("../img/oxford-768.png") type("image/png")
+    );
+    &__container {
+      padding: 0 36px;
+    }
+  }
+}
+
+@include mixins.mobile {
+  .new {
+    padding: 0;
+    background: transparent;
+    &__container {
+      padding: 33px 12px 112px;
+      margin-bottom: 32px;
+      background: #f1f3fc center/cover no-repeat;
+      background-image: image-set(
+        url("../img/oxford-320.webp") type("image/webp"),
+        url("../img/oxford-320.png") type("image/png")
+      );
+    }
+    &__title {
+      max-width: 187px;
+      font-size: 24px;
+    }
+    &__description {
+      max-width: 187px;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    &__button {
+      min-width: 296px;
+      margin: 0 auto;
+      &_mobile {
+        display: block;
+      }
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+}

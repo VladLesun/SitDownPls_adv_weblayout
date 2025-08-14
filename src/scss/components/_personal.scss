@@ -1,0 +1,89 @@
+@use "mixins";
+
+.personal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100px;
+  &__btn {
+    position: relative;
+    flex-shrink: 0;
+    color: var(--personal-default);
+    transition: color 0.3s ease-in-out;
+    &_cabinet {
+      width: 26px;
+      height: 28px;
+    }
+    &_basket {
+      position: relative;
+      padding-left: 11px;
+      width: 41px;
+      height: 28px;
+    }
+    &-wrap {
+      &::before {
+        position: absolute;
+        top: -3px;
+        left: -4px;
+        content: "";
+        width: calc(100% + 8px);
+        height: calc(100% + 6px);
+        transform-origin: left;
+        transform: scale(0, 1);
+        background-color: var(--personal-focus-bc);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+    &-content {
+      position: relative;
+      z-index: 1;
+    }
+    @include mixins.hover {
+      color: var(--personal-hover);
+    }
+    @media (any-hover: hover) {
+      &:focus {
+        color: var(--personal-focus);
+      }
+      &:focus &-wrap::before {
+        transform: scale(1, 1);
+      }
+    }
+    &:active {
+      color: var(--personal-active);
+    }
+  }
+
+  &__btn-count {
+    position: absolute;
+    top: 3px;
+    left: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 15px;
+    border-radius: 100%;
+    font-family: var(--OS-Bold);
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 100%;
+    color: #fff;
+    background-color: var(--orange-color);
+  }
+}
+
+@include mixins.tablet {
+  .personal {
+    justify-self: end;
+    margin-right: 4px;
+  }
+}
+
+@include mixins.mobile {
+  .personal {
+    margin-right: 0;
+  }
+}

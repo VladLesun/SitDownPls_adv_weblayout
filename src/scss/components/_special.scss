@@ -1,0 +1,51 @@
+@use "mixins";
+
+.special {
+  padding: 70px 0 35px;
+  &__list {
+    display: grid;
+    grid-template-columns: 296px 2fr 296px;
+    grid-gap: 32px;
+  }
+  &__item {
+    min-height: 511px;
+    &:nth-child(n + 4) {
+      display: none;
+    }
+  }
+}
+
+@include mixins.laptop {
+  .special {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@include mixins.tablet {
+  .special {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__item {
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mixins.small-tablet {
+  .special {
+    &__list {
+      grid-template-columns: 1fr;
+      grid-gap: 24px;
+    }
+    &__item {
+      &:nth-child(n + 3) {
+        display: block;
+      }
+    }
+  }
+}
